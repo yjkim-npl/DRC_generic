@@ -13,6 +13,9 @@
 #include "FTFP_BERT.hh"
 #include "Randomize.hh"
 
+#define G4VIS_USE
+#define G4UI_USE
+
 #ifdef G4VIS_USE
 #include "G4VisExecutive.hh"
 #endif
@@ -52,8 +55,8 @@ int main(int argc, char** argv) {
   physicsList->RegisterPhysics(opticalPhysics);
   opticalPhysics->Configure(kCerenkov, true);
   opticalPhysics->Configure(kScintillation, true);
-  opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
-  opticalPhysics->SetTrackSecondariesFirst(kScintillation, true);
+//  opticalPhysics->SetTrackSecondariesFirst(kCerenkov, true);
+//  opticalPhysics->SetTrackSecondariesFirst(kScintillation, true);
   runManager->SetUserInitialization(physicsList);
 
   // User action initialization
@@ -78,7 +81,7 @@ int main(int argc, char** argv) {
     #else
     UImanager->ApplyCommand("/control/execute init.mac");
     #endif
-    if (ui->IsGUI()) { UImanager->ApplyCommand("/control/execute gui.mac"); }
+//    if (ui->IsGUI()) { UImanager->ApplyCommand("/control/execute gui.mac"); }
     // start interactive session
     ui->SessionStart();
     delete ui;

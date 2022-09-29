@@ -7,7 +7,7 @@ project(DRsim)
 # You can set WITH_GEANT4_UIVIS to OFF via the command line or ccmake/cmake-gui
 # to build a batch mode only executable
 #
-option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" OFF)
+option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
   find_package(Geant4 REQUIRED ui_all vis_all)
 else()
@@ -38,8 +38,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 add_executable(DRsim DRsim.cc ${sources} ${headers})
 target_link_libraries(
   DRsim ${Geant4_LIBRARIES}
-  ${HEPMC_DIR}/lib64/libHepMC3.so
-  ${HEPMC_DIR}/lib64/libHepMC3rootIO.so
+  ${HEPMC_DIR}/lib/libHepMC3.dylib
+  ${HEPMC_DIR}/lib/libHepMC3rootIO.dylib
   rootIO
 )
 

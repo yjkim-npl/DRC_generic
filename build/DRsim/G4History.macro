@@ -6,7 +6,7 @@
 /vis/sceneHandler/create OGL
 /vis/viewer/create ! ! 600x600-0+0
 /vis/viewer/refresh
-/vis/ogl/set/displayListLimit 500000
+/vis/ogl/set/displayListLimit 5000000
 /vis/viewer/set/autoRefresh false
 /vis/verbose errors
 /vis/drawVolume
@@ -16,8 +16,6 @@
 /vis/viewer/set/upVector 1 0 0
 /vis/viewer/set/viewpointVector 0 1 0
 /vis/viewer/zoom 1.6
-/vis/scene/add/axes 0 0 0 1 m
-/vis/scene/notifyHandlers
 /vis/scene/add/trajectories smooth
 /tracking/storeTrajectory 2
 /vis/scene/notifyHandlers
@@ -34,7 +32,19 @@
 /vis/viewer/set/autoRefresh true
 /vis/viewer/refresh
 /vis/verbose warnings
-/control/execute run_ele.mac
-/DRsim/action/useHepMC False
-/DRsim/action/useCalib False
-/vis/disable
+/vis/viewer/zoomTo 20
+/vis/viewer/refresh
+/vis/viewer/set/viewpointVector 0 0 -1
+/vis/viewer/refresh
+/vis/viewer/zoomTo 20
+/vis/viewer/refresh
+/vis/viewer/zoomTo 50
+/vis/viewer/refresh
+/vis/viewer/zoomTo 100
+/vis/viewer/refresh
+/vis/viewer/zoomTo 200
+/vis/viewer/refresh
+/vis/viewer/zoomTo 400
+/vis/viewer/refresh
+/vis/viewer/zoomTo 1600
+/vis/viewer/refresh

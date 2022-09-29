@@ -4,7 +4,7 @@
 #
 # Use this open statement to create an OpenGL view:
 /vis/open OGL 600x600-0+0
-/vis/ogl/set/displayListLimit 500000
+/vis/ogl/set/displayListLimit 5000000
 #
 # Use this open statement to create a .prim file suitable for
 # viewing in DAWN:
@@ -37,7 +37,7 @@
 #/vis/viewer/set/style wireframe
 #
 # Draw coordinate axes:
-/vis/scene/add/axes 0 0 0 1 m
+#/vis/scene/add/axes 0 0 0 1 m
 #
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
@@ -78,3 +78,5 @@
 # Set visualization to accumulate events into one picture
 #
 #/vis/scene/endOfEventAction accumulate
+/vis/viewer/zoomTo 20
+/vis/viewer/set/viewpointVector 0 0 -1

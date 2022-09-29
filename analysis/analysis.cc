@@ -141,4 +141,10 @@ int main(int argc, char* argv[]) {
   tWav_S->Draw("Hist"); c->SaveAs(outputname+"_wavS.png");
   tNhit_C->Draw("Hist"); c->SaveAs(outputname+"_nhitC.png");
   tNhit_S->Draw("Hist"); c->SaveAs(outputname+"_nhitS.png");
+   TFile* outroot = new TFile("out_"+filename+".root","recreate");
+   tEdep -> Write("tEdep");
+   tHit_C -> Write("tHit_C");
+   tHit_S -> Write("tHit_S");
+   tNhit_C -> Write("tNhit_C");
+   tNhit_S -> Write("tNhit_S");
 }
